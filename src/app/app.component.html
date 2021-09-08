@@ -1,4 +1,28 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div class="main-container">
+  <!-- ============================================================== -->
+  <!-- Topbar - style you can find in header.scss -->
+  <!-- ============================================================== -->
+  <mat-toolbar color="primary" class="topbar telative">
+    <button mat-icon-button (click)="snav.toggle()" value="sidebarclosed">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #snav id="snav" class="dark-sidebar pl-xs" mode="side" opened="true" fixedTopGap="0">
+      <app-sidebar></app-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content class="page-wrapper">
+      <div class="page-content">
+
+        <router-outlet>
+          <app-spinner></app-spinner>
+        </router-outlet>
+
+      </div>
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

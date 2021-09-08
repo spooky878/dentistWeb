@@ -1,15 +1,13 @@
+import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
-import {AfterViewInit, ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
-import {MenuItems} from './shared/menu-items/menu-items';
+import {MenuItems} from '../shared/menu-items/menu-items';
 
-
-/** @title Responsive sidenav */
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
+  selector: 'app-sidebar',
+  templateUrl: './sidebar.component.html',
   styleUrls: []
 })
-export class AppComponent implements OnDestroy, AfterViewInit {
+export class AppSidebarComponent implements OnDestroy {
   mobileQuery: MediaQueryList;
 
   private _mobileQueryListener: () => void;
@@ -26,8 +24,5 @@ export class AppComponent implements OnDestroy, AfterViewInit {
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
-  }
-
-  ngAfterViewInit() {
   }
 }

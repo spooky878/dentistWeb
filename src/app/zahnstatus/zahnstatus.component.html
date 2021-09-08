@@ -1,0 +1,11 @@
+<mat-button-toggle-group name="favoriteColor" [(ngModel)]="tool" aria-label="Favorite Color">
+  <mat-button-toggle value="rot" style="background-color: rgba(255,0,0,0.63)">rot</mat-button-toggle>
+  <mat-button-toggle value="grün" style="background-color: rgba(0,128,0,0.62)">grün</mat-button-toggle>
+  <mat-button-toggle value="löschen">löschen</mat-button-toggle>
+  <mat-slider min="1" max="10" step="1" [(ngModel)]="radius"></mat-slider>
+</mat-button-toggle-group>
+
+
+<div #surface style="height: 325px" (click)="onClick($event)" (mousedown)="onMousedown($event)"
+     (mouseup)="onMouseup($event)" (mousemove)="onMousemove($event)">
+</div>
